@@ -117,49 +117,6 @@ try{
     
 }
 
-
-
-    
-//
-//function multiply_matrices(a, b){
-   // var product_matrix = []
-   // const math = require('mathjs')
-    //set the num of rows of the both matrices
-  //  a_num_r = a.length
-  //  b_num_r = b.length
-
-    //set the num of columns of the both matrices
-   // a_num_c = a[0].length
-   // b_num_c = b[0].length
-    //The matriz result will be C(a_num_r x b_num_c)
-    //const matrix = math.matrix([[1, 2], [3, 4]]);
-     //   const transpose = math.transpose(matrix);
-      //  console.log(transpose);
-//}
-
-
-function getCookie(name) {
-    var cookieValue = null;
-    if (document.cookie && document.cookie != '') {
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = cookies[i].trim();
-            // Does this cookie string begin with the name we want?
-            if (cookie.substring(0, name.length + 1) == (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
-        }
-    }
-    return cookieValue;
-}
-
-function  resolve_system(a,b){
-    console.log(math.multiply(math.inv(a), b))
-    return math.multiply(math.inv(a), b)
-    
-}
-
 function change_width(){
     console.log('ois')
     let current_class = window.event.target.className
