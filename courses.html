@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="scripts/basic.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="estilos/style.css">
+  <link rel="shortcut icon" href="imagens/brain_882998.png" type="image/x-icon">
+  <script>
+    
+    //Serch engine of the select by category
+    async function course_category(select){
+      console.log(select)
+      console.log(select.value)
+      var cards_ids = []
+      // return the cards to a way that all are present
+      var cards = await document.querySelectorAll('.card')
+      console.log(cards)
+      cards.forEach(card=>{
+        card.style.display = 'flex';
+        cards_ids.push(card.id)
+      })
+      if(select.value != 'A'){
+        var select_cards = await document.querySelectorAll(`div[ value = ${select.value} ]`)
+        var select_cards_ids = []
+  
+        select_cards.forEach(select_card=>{
+          select_cards_ids.push(select_card.id)
+        })
+  
+  
+        cards_ids.forEach(id=>{
+          if(select_cards_ids.indexOf(id) == -1){
+            console.log('apaga')
+            console.log(id)
+            document.querySelector(`#${id}`).style.display = 'none';
+          }
+        })
+      }
+      }
+    </script>
+    
+  <title>Cursos</title>
+</head>
+<body>
+  <header>
+    <nav id="nav">
+        <a class="logo" href="home.html">Estudologia</a>
+        <div class="mobile_menu">
+            <div class="nav_btn">  
+                <i onclick='showMenu()' class="fa-solid fa-bars"></i>
+            </div>        
+        </div>
+        <ul class="nav_list">
+            <input type="checkbox" name="checkbox" class="checkbox" id="chk" onchange="change_theme(document.body.className)">
+            <label class="theme_label" for="chk">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun"></i>
+                <div class="ball"></div>
+            </label>
+            <li class="nav_link"><a href="courses.html">Cursos</a></li>
+            <li class="nav_link"><a href="hub.html">Apps</a></li>
+            <li class="nav_link"><a href="about_me.html">Sobre Mim</a></li>
+        </ul>     
+    </nav>
+</header>
+  <main>
+    <h1>Cursos Disponíveis</h1>
+    <select name="category" id="category_select_avialble_course" class="form-select" onchange="course_category(this)"> 
+      <option selected value="A">Tudo</option>
+      <option value="L">Linguagens</option>
+      <option value="H">Ciências Humanas</option>
+      <option value="M">Matemática</option>
+      <option value="N">Ciências da Natureza</option>
+    </select>
+
+  <div class="text_content">
+    <div class="content_avaialble_courses">
+                  
+      <div class="card" style="width: 18rem;" id="card_1" value="H">
+        <a href="https://www.notion.so/3d8b3a99d38b484b82fd18cc22606f74?v=6dcebea644054ecf9868fa018c03ac72"><img  class="card-img-top" src="imagens/geography_image.png" class="Card image cap"></a>
+         <div class="card-body">
+             <a href="https://www.notion.so/3d8b3a99d38b484b82fd18cc22606f74?v=6dcebea644054ecf9868fa018c03ac72">Curso de Geografia Básico</a>
+             <input type="hidden" name="cond" class="cond_1" value="avaialble_courses">
+           <p class="card-text">Esse é um curso que visa cobrir todos os principais tópicos de geogragia no ensino médio, permitindo o estudante conquistar boas notas nos principais vestibulares do país.</p>
+           <div class="buttons">
+             <a rel="internal" href="https://cypress-airmail-3e2.notion.site/3d8b3a99d38b484b82fd18cc22606f74?v=6dcebea644054ecf9868fa018c03ac72&pvs=4" class="btn btn-primary">Acesse</a>
+             
+           </div>
+         </div>
+       </div>
+      
+        <div class="card" style="width: 18rem;" id="card_7" value="L">
+          <a href="https://cypress-airmail-3e2.notion.site/9e759e9882ec451ea4f3b32203219505?v=2079e88ea4da4e1ba6dbd4e2a5a75dfd"><img  class="card-img-top" src="imagens/portuguese.jpeg" class="Card image cap"></a>
+            <div class="card-body">
+              <a href="https://cypress-airmail-3e2.notion.site/9e759e9882ec451ea4f3b32203219505?v=2079e88ea4da4e1ba6dbd4e2a5a75dfd">O Novo Português</a>
+              <input type="hidden" name="cond" class="cond_7" value="my_course">
+              <p class="card-text">O objetivo do curso é explorar a língua portuguesa com uma outra perspectiva, uma em que o português tem mais funções sociais, possibilitando o estudante construir um pensamento reflexivo sobre a relação entre língua e sociedade além de promover um bom desempenho nos vestibulares.</p>
+              <div class="buttons">
+                <a rel = 'external' href="https://cypress-airmail-3e2.notion.site/9e759e9882ec451ea4f3b32203219505?v=2079e88ea4da4e1ba6dbd4e2a5a75dfd" class="btn btn-primary">Acesse</a>
+              </div>
+            </div>
+        </div>
+  
+      <div class="card" style="width: 18rem;" id="card_2" value="M">
+         <a href="https://cypress-airmail-3e2.notion.site/9ae680d7d3fe46b1939fa407cee1c6c7?v=dc78a37b18c94989a7a22c0f9d892030"><img  class="card-img-top" src="imagens/mathematics-course.jpg" alt="Card image cap"></a>
+          <div class="card-body">
+              <a href="https://cypress-airmail-3e2.notion.site/9ae680d7d3fe46b1939fa407cee1c6c7?v=dc78a37b18c94989a7a22c0f9d892030">Matemática Essencial para o Ensino Médio</a>
+              <input type="hidden" name="cond" class="cond_2" value="avaialble_courses">
+            <p class="card-text">Matemática essencial para o Ensino Médio promove uma sólida base matemática, para que depois o estudante aprofunde mais.</p>
+            <div class="buttons">
+              <a rel="internal" href="https://cypress-airmail-3e2.notion.site/9ae680d7d3fe46b1939fa407cee1c6c7?v=dc78a37b18c94989a7a22c0f9d892030" class="btn btn-primary">Acesse</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="card" style="width: 18rem;" id="card_3" value="N">
+         <a href="https://cypress-airmail-3e2.notion.site/f291d34a1cae40ef9445aef2564cf31a?v=f62043a135d346fda8078d70a9767d08"><img  class="card-img-top" src="imagens/biologia-285.jpg" alt="Card image cap"></a>
+          <div class="card-body">
+              <a href="https://cypress-airmail-3e2.notion.site/f291d34a1cae40ef9445aef2564cf31a?v=f62043a135d346fda8078d70a9767d08">Biologia Fundamental</a>
+              <input type="hidden" name="cond" class="cond_3" value="avaialble_courses">
+            <p class="card-text">Esse curso de biologia para o ensino médio tem o objetivo de consolidar uma forte base nos estudos sobre a vida.</p>
+            <div class="buttons">
+              <a rel="internal" href="https://cypress-airmail-3e2.notion.site/f291d34a1cae40ef9445aef2564cf31a?v=f62043a135d346fda8078d70a9767d08" class="btn btn-primary">Acesse</a>
+            
+            </div>
+          </div>
+        </div>
+            
+      <div class="card" style="width: 18rem;" id="card_4" value="N">
+         <a href="https://cypress-airmail-3e2.notion.site/8f1b2d2b591f49a8bbc1258799bd1127?v=7e33611411f3444a857ade4f96e99246"><img  class="card-img-top" src="imagens/fisica.jpg" alt="Card image cap"></a>
+          <div class="card-body">
+              <a href="https://cypress-airmail-3e2.notion.site/8f1b2d2b591f49a8bbc1258799bd1127?v=7e33611411f3444a857ade4f96e99246">Endendento a Física</a>
+              <input type="hidden" name="cond" class="cond_4" value="avaialble_courses">
+            <p class="card-text">Esse curso contem os principais tópicos em física que são estudados no ensino médio, abrindo um universo de possibilidades para o aprofundamento.</p>
+            <div class="buttons">
+              <a rel="internal" href="https://cypress-airmail-3e2.notion.site/8f1b2d2b591f49a8bbc1258799bd1127?v=7e33611411f3444a857ade4f96e99246" class="btn btn-primary">Acesse</a>
+        
+            </div>
+          </div>
+        </div>
+      
+      <div class="card" style="width: 18rem;" id="card_5" value="N">
+         <a href="https://cypress-airmail-3e2.notion.site/059825fb82c54518be548db4936c8054?v=349726d8213c4f6b8e5d4270f103574c"><img  class="card-img-top" src="imagens/chemistry.jpg" alt="Card image cap"></a>
+          <div class="card-body">
+              <a href="https://cypress-airmail-3e2.notion.site/059825fb82c54518be548db4936c8054?v=349726d8213c4f6b8e5d4270f103574c">Química Descomplicada</a>
+              <input type="hidden" name="cond" class="cond_5" value="avaialble_courses">
+            <p class="card-text">Química Descomplicada é  um curso para se estudar física de uma forma fácil, possibilitando o estudante aprender mais sobre essa disciplina no futuro.</p>
+            <div class="buttons">
+              <a rel="internal" href="https://cypress-airmail-3e2.notion.site/059825fb82c54518be548db4936c8054?v=349726d8213c4f6b8e5d4270f103574c" class="btn btn-primary">Acesse</a>
+             
+            </div>
+          </div>
+        </div>
+      
+      <div class="card" style="width: 18rem;" id="card_6" value="H">
+         <a href="https://cypress-airmail-3e2.notion.site/6ff9d569cda34dd3acd39109f44f907d?v=c6e56fb3c5cc413ab038b7c5f1ac9325"><img  class="card-img-top" src="imagens/history.png" alt="Card image cap"></a>
+          <div class="card-body">
+              <a href="https://cypress-airmail-3e2.notion.site/6ff9d569cda34dd3acd39109f44f907d?v=c6e56fb3c5cc413ab038b7c5f1ac9325">Toda a História</a>
+              <input type="hidden" name="cond" class="cond_6" value="avaialble_courses">
+            <p class="card-text">Toda a História é um curso com o objetivo de gerar um pensamento reflexivo sobre a sociedade por parte do estudante, construindo conhecimento para as principais provas de história.</p>
+            <div class="buttons">
+              <a rel="internal" href="https://cypress-airmail-3e2.notion.site/6ff9d569cda34dd3acd39109f44f907d?v=c6e56fb3c5cc413ab038b7c5f1ac9325" class="btn btn-primary">Acesse</a>
+            </div>
+          </div>
+        </div>
+      
+      <div class="card" style="width: 18rem;" id="card_8" value="L">
+         <a href="https://cypress-airmail-3e2.notion.site/39090077fede43f8a0a3232df9d77b14?v=58e14c0c321a4915bf84f9de009b70a6"><img  class="card-img-top" src="imagens/literature.jpg" alt="Card image cap"></a>
+          <div class="card-body">
+              <a href="https://cypress-airmail-3e2.notion.site/39090077fede43f8a0a3232df9d77b14?v=58e14c0c321a4915bf84f9de009b70a6">Literatura Reflexiva</a>
+              <input type="hidden" name="cond" class="cond_8" value="avaialble_courses">
+            <p class="card-text">O curso oferece estudos sobre as principais escolas literárias do Brasil e de Portugal, fazendo com que o estudante entenda como o contexto histórico afeta a produção de arte na sociedade.</p>
+            <div class="buttons">
+              <a rel="internal" href="https://cypress-airmail-3e2.notion.site/39090077fede43f8a0a3232df9d77b14?v=58e14c0c321a4915bf84f9de009b70a6" class="btn btn-primary">Acesse</a>
+            </div>
+          </div>
+        </div>
+    </div>  
+  </div>
+
+  </main>
+</body>
+</html>
+
