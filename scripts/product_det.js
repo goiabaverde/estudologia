@@ -86,7 +86,7 @@ function change_width_matrix(event_target){
         event_target.parentElement.style.width = `${(event_target.value.length * 8) + parseInt(parent.getPropertyValue('width'))}px`
     }
 
-    if(parseInt(element.value.length) > 8){
+    if(parseInt(event_target.value.length) > 8){
         localStorage.setItem('expand_width', 'true')
         event_target.parentElement.style.width = `${(event_target.value.length * 8) + 250}px`
     }
