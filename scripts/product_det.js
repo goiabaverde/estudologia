@@ -116,7 +116,9 @@ function get_values(){
     // Calculate the determinant
     document.querySelector('.p_operation_result').style.display = 'block';
     document.querySelector('.p_operation_result').innerHTML = determinante(matrix)
-    let new_width = (document.querySelector('.p_operation_result').value.lenght * 8) + 175
+    let p = document.querySelector('.p_operation_result')
+    let style_p = window.getComputedStyle(p)
+    let new_width = (document.querySelector('.p_operation_result').textContent.lenght * 8) + parseFloat(style_p.getPropertyValue('width'))
     document.querySelector('.p_operation_result').style.width = `${new_width}px`
     document.querySelector('.p_operation_result').style.overflowX = 'auto'
 }
