@@ -2,17 +2,7 @@ function select_grid(grid){
     try{
         document.querySelector('.input_area').innerHTML = '';
     }catch (e){console.log(e)}
-    
-    //console.log(grid)
-    //document.querySelector('.p_operation_result').style.display = 'none';
     const grid_type = grid
-    //var grids = document.querySelectorAll('.grid')
-    //grids.forEach(grid=>{
-    //    grid.style.display = 'none'
-    //})
-    //console.log(grids, grid_type)
-    //document.querySelector(`#grid-${grid_type}`).style.display = 'block';
-    const form = document.createElement("form");
     form.setAttribute('onsubmit', 'return false')
     document.querySelector('.input_area').append(form)
     const div = document.createElement('div')
