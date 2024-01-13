@@ -41,24 +41,21 @@
             <div class="content_theory">
                 <p>Triângulo de Pascal é uma melhor maneira de visualiar a expanssão binomial de Newton onde cada linha é construída com os valores das combinações de C(n,k) em que n é o número da linha e k o número da coluna.</p>
             </div>
-           
         </div>
         <h1>Calculadora geradora de Triângulo de Pascal</h1>
         <input type="hidden" name="type" value="ps">
         <div class="content">
             <form onsubmit="return false">
                 <label for="row">Número de linhas que o triângulo terá:</label>
-                <input type="number" name="var1" id="row" min="0" value="{{ row }}">
+                <input type="number" name="var1" id="row" required min="0" onkeypress="change_width(this)">
                 <button onclick="pascal()" class="btn btn-primary">Gerar triângulo</button>
             </form>
         </div>
         <div class="resu">
             <table id="pascal_table">
-                
             </table>
         </div>
     </div>
-    
 </main>
 </body>
 </html>
