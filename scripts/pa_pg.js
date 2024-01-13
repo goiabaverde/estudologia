@@ -46,8 +46,7 @@ function pa(event_target){
     var a1 = parseFloat(document.querySelector('#a1').value)
     var r = parseFloat(document.querySelector('#r').value)
 
-    console.log(a1, typeof(a1))
-    console.log(r, typeof(r))
+
 
      if( !a1 || !r ){
         window.alert("Os inputs precisam ser preenchidos!")
