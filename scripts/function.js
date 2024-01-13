@@ -79,10 +79,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
         for (var i = -10; i <= +10; i++) {
             let obj = {}
             let key = i
+            try{
             let value = eval(function_text.replaceAll('x', `${i}`))
+            console.log(eval(function_text.replaceAll('x', `${i}`)));
+            }catch{window.alert("Não foi possível operar com essa função.")}
             obj[key] = value
             values.push(obj)
-            console.log(eval(function_text.replaceAll('x', `${i}`)));
+            
         }
         console.log(values)
         evaluateExpression = new Function('x', 'return ' + function_text);
