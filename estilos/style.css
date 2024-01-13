@@ -604,3 +604,5 @@ table tbody, table thead {
 #body{
     overflow-x: hidden;
 }
+
+#function_input{width: 80px;}
