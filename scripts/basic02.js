@@ -53,38 +53,9 @@ try{
     console.log(e)
 }
 
-function change_width(){
-    console.log('ois')
-    let current_class = window.event.target.className
-    var inputs = document.querySelectorAll(`.${current_class}`)
-    //check witch value is higher
-    var lengths = []
-    inputs.forEach(input=>{
-        lengths.push(parseInt(input.value.length))
-    })
-    console.log(lengths)
-    console.log(Math.max(...lengths))
-    if(Math.max(...lengths) >  window.event.target.value.length){
-        return 0
-    }else{
-    var new_width = (window.event.target.value.length * 8)  + 40;
-    console.log(window.event.target.value.length, new_width);
-   
-    console.log(current_class);
-    
-    console.log(inputs)
-    console.log(new_width, current_class, inputs)
-    inputs.forEach(input =>{
-        input.style.width = `${new_width}px`
-    }) 
-    
-    try{
-        if(window.event.target.length )
-        if(window.event.target.length > 8){
-            
-            window.event.target.parentElement.style.width = `${(window.event.target.value.length * 8) + 250}px`
-        }
-    }catch (e){console.log(e)}
+function change_width(event_target){
+    let new_width = (event_target.value.length * 8)  + 40;
+    event_target.style.width = `${new_width}px`        
 }
 }
 
