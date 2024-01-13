@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             let obj = {}
             let key = i
             try{
-            let value = eval(function_text.replaceAll('x', `${i}`))
+            var value = eval(function_text.replaceAll('x', `${i}`))
             console.log(eval(function_text.replaceAll('x', `${i}`)));
             }catch{window.alert("Não foi possível operar com essa função.")}
             obj[key] = value
