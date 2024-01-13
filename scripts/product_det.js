@@ -34,7 +34,7 @@ function select_grid(grid){
     document.querySelector('.input_area').append(form)
     const div = document.createElement('div')
     div.className = 'grid'
-    div.id = `class-${grid_type}`
+    div.id = `class-${grid}`
     form.append(div)
 
     for(var i = 0; i < parseInt(grid); i++){
