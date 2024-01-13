@@ -53,9 +53,9 @@
             <form onsubmit="return false">
                 <input type="hidden" name="" value="new_progression">
                 <label for="a1">a1</label>
-                <input type="number" name="var1" id="a1"  required step="any">
+                <input type="number" name="var1" id="a1"  required step="any" onkeypress="change_width(this)">
                 <label for="r">q</label>
-                <input type="number" name="var2" id="q"  required step="any">
+                <input type="number" name="var2" id="q"  required step="any" onkeypress="change_width(this)">
                 <button type="submit" value="new_progression" class="btn btn-primary" id="submit_btn" data-mode="pg">Generate</button>
             </form>
             <div class="result_area"></div>
@@ -68,7 +68,7 @@
      
             <div class="operation_input">
                     <label for="pro">Produto dos termos até o n-ésimo termo.</label>
-                    <input type="number" name="pro" id="pro">
+                    <input type="number" name="pro" id="pro" onkeypress="change_width(this)">
                     <button class="btn btn-primary" onclick="pro_pg()">Multiplicar</button>
                     <div class="operation_result" id="pro_result"></div>
             </div>
