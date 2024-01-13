@@ -42,7 +42,7 @@ function select_grid(grid){
             let input = document.createElement('input')
             input.setAttribute('type', 'number')
             input.setAttribute("name", `item-${grid}x${grid}-${i+1}_${j+1}`)
-            input.setAttribute('onkeypress', 'change_width()')
+            input.setAttribute('onkeypress', 'change_width_matrix(this)')
             input.className = `c${j+1}-${grid}x${grid}`
             input.id = `item-${grid}x${grid}-${i+1}_${j+1}`
             input.style.overflowX = 'auto'
@@ -64,6 +64,37 @@ function select_grid(grid){
 }
 
 
+function change_width_matrix(event_target){
+    let current_class = event_target.className
+    var inputs = document.querySelectorAll(`.${current_class}`)
+    //check witch value is higher
+    var lengths = []
+    inputs.forEach(input=>{
+        lengths.push(parseFloat(input.value.length))
+    })
+    // Check if the lenght is the highest value, if is will return 0 because don't need to change the width, but if don't the width will be changed
+    if(Math.max(...lengths) >  event_target.value.length){
+        return 0
+    }else{
+    var new_width = (event_target.value.length * 8)  + 40;
+
+    inputs.forEach(input =>{
+        input.style.width = `${new_width}px`
+    }) 
+    if(localStorage.getItem('expand_width') == 'true' && event_target.value.length <= 8){
+        let parent = window.getComputedStyle(element.parentElement)
+        event_target.parentElement.style.width = `${(event_target.value.length * 8) + parseInt(parent.getPropertyValue('width'))}px`
+    }
+
+    if(parseInt(element.value.length) > 8){
+        localStorage.setItem('expand_width', 'true')
+        event_target.parentElement.style.width = `${(event_target.value.length * 8) + 250}px`
+    }
+
+}
+}
+
+
 function get_values(){
     var matrix_type = document.querySelector('#grid_select').value
     var matrix = []
@@ -71,10 +102,9 @@ function get_values(){
     for(var i  = 0; i < matrix_type; i++){
         var row = []
         for(var j = 0; j < matrix_type; j++){
-            const test = `#item-${matrix_type}x${matrix_type}-${i+1}_${j+1}`
             let element = parseInt(document.querySelector(`#item-${matrix_type}x${matrix_type}-${i+1}_${j+1}`).value)
             if(!element){
-                window.alert("All the lines must be filled")
+                window.alert("Todos as linhas precissam estar preenchidas!")
                 return 1
             }
             row.push(element)
@@ -157,7 +187,7 @@ function generate_matrix(mode) {
     //check if all the value has been filled
     data.forEach(val=>{
         if(val == ''){
-            window.alert("All the inputs must be filled")
+            window.alert("É necessário inserir os parâmetros para gerar a matriz.")
             return 0
         }
     })
@@ -203,7 +233,6 @@ function generate_matrix(mode) {
         for(var i  = 0; i < val_array[0]; i++){
             var row = []
             for(var j = 0; j < val_array[1]; j++){
-                const test = `#item-${val_array[0]}x${val_array[1]}-${i+1}_${j+1}`
                 row.push(parseInt(document.querySelector(`#item-${val_array[0]}x${val_array[1]}-${i+1}_${j+1}-${val_array[2]}`).value))
             }
             val_array[3].push(row)
@@ -275,41 +304,6 @@ for(var i = 1 ; i <= max_widths.length; i++){
     })
 }
 
-
-}
-}
-
-
-function change_width_matrix(element){
-    let current_class = element.className
-    var inputs = document.querySelectorAll(`.${current_class}`)
-    //check witch value is higher
-    var lengths = []
-    inputs.forEach(input=>{
-        lengths.push(parseInt(input.value.length))
-    })
- 
-    if(Math.max(...lengths) >  element.value.length){
-        return 0
-    }else{
-    var new_width = (element.value.length * 8)  + 40;
-
-   
-
-    
-
-    inputs.forEach(input =>{
-        input.style.width = `${new_width}px`
-    }) 
-    if(localStorage.getItem('expand_width') == 'true' && element.value.length <=8){
-        let parent = window.getComputedStyle(element.parentElement)
-        element.parentElement.style.width = `${(element.value.length * 8) + parseInt(parent.getPropertyValue('width'))}px`
-    }
-
-    if(parseInt(element.value.length) > 8){
-        localStorage.setItem('expand_width', 'true')
-        element.parentElement.style.width = `${(element.value.length * 8) + 250}px`
-    }
 
 }
 }
