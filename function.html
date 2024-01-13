@@ -37,10 +37,10 @@
 </header>
 <main>
     <div class="calculator">
-        <h1>Function Calculator</h1>
+        <h1>Função Gráfica</h1>
         <div class="input-area">
             <form onsubmit="return false;">
-                <input type="text" name="function_input" id="function_input" placeholder="f(x)" onkeypress="this.style.width =((this.value.length + 1)* 8) + 40 + 'px'" >
+                <input type="text" name="function_input" id="function_input" placeholder="f(x)" onkeypress="change_width(this)" >
                 <button type="submit" value="new_progression" class="btn btn-primary" id="submit_btn">Gerar</button >
             </form>
             <h2>Observações...</h2>
