@@ -51,9 +51,9 @@
             <form onsubmit="return false;">
                 <input type="hidden" name="" value="new_progression">
                 <label for="a1">a1</label>
-                <input type="number" name="var1" id="a1" required step="any">
+                <input type="number" name="var1" id="a1" required step="any" onkeypress = "change_width(this)">
                 <label for="r">r</label>
-                <input type="number" name="var2" id="r"  required step="any">
+                <input type="number" name="var2" id="r"  required step="any" onkeypress = "change_width(this)">
                 <button type="submit" value="new_progression" class="btn btn-primary" id="submit_btn" data-mode="pa">Gerar</button >
             </form>
             <div class="result_area"></div>
