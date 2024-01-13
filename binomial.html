@@ -47,7 +47,7 @@
         <p></p>
         <h1 title="test">Calculadora de Binômio de Newton</h1>
         <input type="hidden" name="type" value="bi">
-        <p>(a+b) <sup><input type="number" name="var1" id="binomial_coef" min="0" required"></sup></p>
+        <p>(a+b) <sup><input type="number" name="var1" id="binomial_coef" min="0" required" onkeypress = "change_width(this)"></sup></p>
         <button onclick="binomial()" class="btn btn-primary">Calcular</button>
         <div class="resu">  
         </div>
