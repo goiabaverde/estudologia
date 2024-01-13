@@ -61,14 +61,14 @@
             <div class="result_area"></div>
             <div class="operation_input">
                     <label for="sum">Soma dos termos até o n-ésimo termo.</label>
-                    <input type="number" name="sum" id="sum">
+                    <input type="number" name="sum" id="sum" required onkeypress="change_width(this)">
                     <button class="btn btn-primary" onclick="sum_pg()">Somar</button>
                     <div class="operation_result" id="sum_result"></div>
             </div>
      
             <div class="operation_input">
                     <label for="pro">Produto dos termos até o n-ésimo termo.</label>
-                    <input type="number" name="pro" id="pro" onkeypress="change_width(this)">
+                    <input type="number" name="pro" id="pro" required onkeypress="change_width(this)">
                     <button class="btn btn-primary" onclick="pro_pg()">Multiplicar</button>
                     <div class="operation_result" id="pro_result"></div>
             </div>
