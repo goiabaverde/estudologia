@@ -94,21 +94,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         evaluateExpression = new Function('x', 'return ' + function_text);
         updateGraph();
         
-        let username = document.querySelector("#is_authenticated").value
-
-        if(username != 'not_logged'){
-            let add_to_model = async function(){
-                await fetch(`http://127.0.0.1:8000/apps/add/function`, {
-                    method:'post',
-                    headers: { 'Content-type' : 'application/json', 'X-CSRFToken' : getCookie('csrftoken')},
-                    body: JSON.stringify({
-                        type : 'fc',
-                        function : original_text
-                    })
-                })
-            }
-            add_to_model()
-        }    
+   
         
     })
 })
