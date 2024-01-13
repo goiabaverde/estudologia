@@ -58,7 +58,7 @@ function change_width(event_target){
     let new_width = (event_target.value.length * 8)  + 40;
     event_target.style.width = `${new_width}px`        
 }
-}
+
 
 
 
