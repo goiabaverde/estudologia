@@ -14,12 +14,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 // Functions to stop the scroll while the menu mobile is active
 function stop_scroll(){
-    console.log('scrolling')
     window.scrollTo(0, 0);
 }
 
 function stop_scroll_mobile(e){
-    console.log('scrolling_mobile')
     e.preventDefault()
 }
 
