@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="scripts/basic.js"></script>
+  <script src="scripts/pomodoro.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="estilos/style.css">
+  <link rel="shortcut icon" href="imagens/brain_882998.png" type="image/x-icon">
+  <title>Pomodoro</title>
+</head>
+<body>
+    <header>
+        <nav id="nav">
+            <a class="logo" href="home.html">Estudologia</a>
+            <div class="mobile_menu">
+                <div class="nav_btn">  
+                    <i onclick='showMenu()' class="fa-solid fa-bars"></i>
+                </div>        
+            </div>
+            <ul class="nav_list">
+                <input type="checkbox" name="checkbox" class="checkbox" id="chk" onchange="change_theme(document.body.className)">
+                <label class="theme_label" for="chk">
+                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun"></i>
+                    <div class="ball"></div>
+                </label>
+                <li class="nav_link"><a href="pomodoro.html">Pomodoro</a></li>
+                <li class="nav_link"><a href="courses.html">Cursos</a></li>
+                <li class="nav_link"><a href="hub.html">Apps</a></li>
+                <li class="nav_link"><a href="about_me.html">Sobre Mim</a></li>
+            </ul>     
+        </nav>
+    </header>
+    <main>
+    <div class="centralized">
+        <div class="content">
+            <div class="text">
+                <h1>Pomodoro</h1>
+                <audio id='audio'controls>
+                    <source src="estilos/plin_sound.mp3" type="audio/ogg">
+                    
+                    Your browser does not support the audio tag.
+                </audio>
+            </div>
+            <div class="pomodoro_interface">
+                <input type="hidden" name="switch" id="timer_switch" data-switch="true">
+                <div class="timer">
+                    <p id="min"></p>
+                    <p> : </p>
+                    <p id="sec">00</p>
+                </div>
+            
+                <div class="inputs">
+                    <button type="button" class="btn btn-success" id="start_btn">Iniciar</button>
+                    <button type="button" class="btn btn-secondary" id="pause_btn">Pausar</button>
+                    <button type="button" class="btn btn-danger" id="reset_btn">Resetar</button>
+                    <select name="pomodoro_mode" id="pomodoro_mode">
+                        <option value="pomodoro">Pomodoro</option>
+                        <option value="short_pause">Pausa curta</option>
+                        <option value="long_pause">Pausa longa</option>
+            
+                    </select>
+                </div>
+                <div class="counter">
+                    <div class="bolinhas"></div>
+                    <div class="bolinhas"></div>
+                    <div class="bolinhas"></div>
+
+                    <div class="bolinhas"></div>
+                    <div class="bolinhas"></div>
+                    <div class="bolinhas"></div>
+                </div>
+                <div class="config_pomodoro">
+                    <div class="pomodoro_values">
+                        <label for="pomodoro">Pomodoro</label>
+                        <input type="number" name="pomodoro" id="pomodoro" min="0" value='25'>
+                        
+                        <label for="short_stop">Pausa Curta</label>
+                        <input type="number" name="short_stop" id="short_stop" min="0" value="5">
+                        <label for="long_stop">Pausa Longa</label>
+                        <input type="number" name="long_stop" id="long_stop" min="0" value="10">
+                    </div>
+                    <div class="checkbox_area">
+                        <label for="auto_start_pause">Começar as pausas automaticamente?</label>
+                        <input type="checkbox" name="auto_start_pause" id="auto_start_pause">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+</body>
