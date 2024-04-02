@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="scripts/basic.js"></script>
+  <script src="scripts/basic02.js"></script>  
+  <script src="scripts/pascal_bi.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="estilos/style.css">
+  <link rel="shortcut icon" href="imagens/brain_882998.png" type="image/x-icon">
+  <title>Calculadora de Equação Química</title>
+</head>
+<body>
+  <header>
+    <nav id="nav">
+        <a class="logo" href="home.html">Estudologia</a>
+        <div class="mobile_menu">
+            <div class="nav_btn">  
+                <i onclick='showMenu()' class="fa-solid fa-bars"></i>
+            </div>        
+        </div>
+        <ul class="nav_list">
+            <input type="checkbox" name="checkbox" class="checkbox" id="chk" onchange="change_theme(document.body.className)">
+            <label class="theme_label" for="chk">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun"></i>
+                <div class="ball"></div>
+            </label>
+            <li class="nav_link"><a href="pomodoro.html">Pomodoro</a></li>
+            <li class="nav_link"><a href="courses.html">Cursos</a></li>
+            <li class="nav_link"><a href="hub.html">Apps</a></li>
+            <li class="nav_link"><a href="about_me.html">Sobre Mim</a></li>
+        </ul>     
+    </nav>
+</header>
+<main>
+    <div class="calculator">
+        <h1>Calculadora Balanceadora de Equações Químicas</h1>
+        <div class="centralized">       
+            <div class="theory_content">
+                <p>O balanceamento feito em equações químicas é feito seguindo o princípio da equivalência estabelecido entre o produto e o reagente, sendo embasado pela lei de Lavoisier referente a conservação de massas.</p>
+                <img src="imagens/lavoisier-law-300.png" alt="">
+            </div>
+        </div>
+       
+        <p></p>
+        <h1 title="test">Calculadora</h1>
+        <input type="hidden" name="type" value="bi">
+        <input type="text" name="var1" id="chemistry_equation_input" min="0" required  placeholder="HCl + NaOH = NaCl + H2O">
+        <button onclick="" class="btn btn-primary">Calcular</button>
+        <div class="resu">  
+        </div>
+    </div>
+</main>
+</body>
+</html>
