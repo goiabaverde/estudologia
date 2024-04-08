@@ -124,6 +124,9 @@ function change_theme(original_theme, first){
    console.log(all_td)
    all_td.forEach(td=>{
     td.classList.toggle('dark')
+
+   const html = document.querySelector("html")
+   html.toggle('dark') 
    })
 
    return 0
