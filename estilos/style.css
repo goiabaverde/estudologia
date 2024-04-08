@@ -9,13 +9,12 @@ html.dark{
 }
 
 body{
-    /*background-color: #CFD8DC;*/
     overflow-x: hidden;
     transition: backgroud 0.2s linear;
 }
 
 main{
-    margin: 0px 0px;
+    margin: 20px 0px;
 }
 
 body.dark{
@@ -698,6 +697,5 @@ table tbody, table thead {
     #chemistry_equation_input{
         width: 300px;
     }
-
 }
 

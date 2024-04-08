@@ -126,7 +126,7 @@ function change_theme(original_theme, first){
     td.classList.toggle('dark')
 
    const html = document.querySelector("html")
-   html.toggle('dark') 
+   html.classList.toggle('dark') 
    })
 
    return 0
