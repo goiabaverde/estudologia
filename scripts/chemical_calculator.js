@@ -473,6 +473,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     function balanceChemicalEquation(){
         document.querySelector("div.msg").textContent = ''
         document.querySelector("p.p_operation_result").textContent = ''
+        document.querySelector(".p_operation_result").style.display = 'none';
+    document.querySelector(".result_area").style.display = 'none';
         console.log(document.querySelector("#chemistry_equation_input").value)
         let equacao = document.querySelector("#chemistry_equation_input").value
         if(equacao.indexOf("=") == -1){
@@ -755,6 +757,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     })
     console.log(balenceded_eq)
     document.querySelector(".p_operation_result").innerHTML = `${balenceded_eq}`
+    document.querySelector(".p_operation_result").style.display = 'block';
+    document.querySelector(".result_area").style.display = 'block';
     }
     
     
