@@ -754,7 +754,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         console.log(e)
     })
     console.log(balenceded_eq)
-    document.querySelector(".p_operation_result").textContent = `${balenceded_eq}`
+    document.querySelector(".p_operation_result").innerHTML = `${balenceded_eq}`
     }
     
     
