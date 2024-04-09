@@ -708,6 +708,10 @@ table tbody, table thead {
     border-radius: 5px;
 }
 
+.msg{
+    margin: 5px 0px;
+}
+
 @media(min-width: 1200px){
     #chemistry_equation_input{
         width: 503px;
