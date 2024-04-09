@@ -38,27 +38,28 @@
 <main>
     <div class="calculator">
         <h1>Calculadora Balanceadora de Equações Químicas</h1>
-        <div class="centralized">       
-            <div class="theory_content">
-                <p>O balanceamento feito em equações químicas é feito seguindo o princípio da equivalência estabelecido entre o produto e o reagente, sendo embasado pela lei de Lavoisier referente a conservação de massas.</p>
-                <img src="imagens/lavoisier-law-300.png" alt="">
+            <div class="centralized">
+                <div class="theory_content">
+                      <p>O balanceamento feito em equações químicas é feito seguindo o princípio da equivalência estabelecido entre o produto e o reagente, sendo embasado pela lei de Lavoisier referente a conservação de massas.</p>
+                    <img src="imagens/lavoisier-law-300.png" alt="">
+                </div>
             </div>
-        </div>
-       
-        <h1>Calculadora</h1>
-        <div class="content">
-            <form onsubmit="return false">
-                <input type="hidden" name="type" value="bi">
-                <input type="text" name="var1" id="chemistry_equation_input" min="0" required  placeholder="HCl + NaOH = NaCl + H2O">
-                <button id="chemistry_equation_btn" class="btn btn-primary">Calcular</button>
-            </form>
-        </div>
         
-        <div class="msg"></div>
-        <div class="result_area"><p class="p_operation_result"></p></div>
-        <!--<div class="operation_result"></div> -->
+            <h1>Calculadora</h1>
+            <div class="content">
+                <form onsubmit="return false">
+                    <input type="hidden" name="type" value="bi">
+                    <input type="text" name="var1" class="chemistry_equation_input" id="chemistry_equation_input" min="0" required  placeholder="HCl + NaOH = NaCl + H2O">
+                    <button id="chemistry_equation_btn" class="btn btn-primary">Calcular</button>
+                </form>
+            </div>
+        
+            <div class="centralized">
+                <div class="msg"></div>
+                <div class="result_area_equation" id="result_area_equation"><p class="p_operation_result"></p></div>
+            </div>
     </div>
-    </div>
+
 </main>
 </body>
 </html>

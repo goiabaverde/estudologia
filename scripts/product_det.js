@@ -103,8 +103,8 @@ function get_values(){
         var row = []
         for(var j = 0; j < matrix_type; j++){
             let element = parseInt(document.querySelector(`#item-${matrix_type}x${matrix_type}-${i+1}_${j+1}`).value)
-            if(!element){
-                window.alert("Todos as linhas precissam estar preenchidas!")
+            if(element == NaN){
+                window.alert("Todas as linhas precissam estar preenchidas!")
                 return 1
             }
             row.push(element)

@@ -212,10 +212,6 @@ svg.bi.bi-list{
     ul.nav_list.active{
         background-color: #23232e;
     }   
-
-    #chemistry_equation_input{
-        width: 377px;
-    }
 }
 
 
@@ -251,7 +247,23 @@ svg.bi.bi-list{
         width: 50vw ;
     }
 
+    #result_area_equation{
+        width: 410px;
+        overflow-x: auto;
+        
+    }
+
+    .p_operation_result{
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+
+    #chemistry_equation_input{
+        width: 300px;
+    }
 }
+
+
 
 @media(max-width: 480px) {
     #form_product{
@@ -259,6 +271,8 @@ svg.bi.bi-list{
         grid-template-columns: 150px 150px;
     }
 }
+
+
 
 .grid_select{
     outline: none;
@@ -496,6 +510,19 @@ td{
     overflow-x: auto;
 }
 
+.result_area_equation{
+    display: none;
+    align-items: center;
+    background-color: wheat;
+    margin: 15px 10px;
+    padding: 10px;
+    border-radius: 10px;
+    overflow-x: auto;
+    width: 60vw;
+}
+
+
+
 .element{
     font-size: 20px;
 }
@@ -681,6 +708,12 @@ table tbody, table thead {
     border-radius: 5px;
 }
 
+@media(min-width: 1200px){
+    #chemistry_equation_input{
+        width: 503px;
+    }
+}
+
 @media(max-width:450px){
     div.pomodoro_values input{
         margin: 0;
@@ -694,8 +727,6 @@ table tbody, table thead {
         width: 30px;
     }
 
-    #chemistry_equation_input{
-        width: 300px;
-    }
+    
 }
 
