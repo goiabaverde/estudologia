@@ -201,6 +201,13 @@ svg.bi.bi-list{
     ;
 }
 
+#chemistry_equation_input{
+    width: 42vw;
+    text-align: left;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
 
 @media(min-width:920px) {
     #nav_btn{
@@ -701,12 +708,6 @@ table tbody, table thead {
     grid-template-rows: 1fr 1fr;
 }
 
-#chemistry_equation_input{
-    width: 42vw;
-    text-align: left;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
 
 .msg{
     margin: 5px 0px;
