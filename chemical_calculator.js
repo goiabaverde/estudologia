@@ -511,7 +511,7 @@ console.log("TESTEE")
         document.querySelector("p.p_operation_result").textContent = ''
         document.querySelector(".p_operation_result").style.display = 'none'
         document.querySelector(".result_area_equation").style.display = 'none'
-        document.querySelector(".chemistry_equation_input").value.trim()
+        let equacao = document.querySelector(".chemistry_equation_input").value.trim()
         console.log(equacao)
         if(equacao.indexOf("=") == -1){
             document.querySelector("div.msg").innerHTML = "<p class = 'alert alert-danger'>É necessário ter um sinal de igual na equação.</p>"
