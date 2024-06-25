@@ -503,11 +503,11 @@
     var produto = ""
     console.log("UAI")
     function balanceChemicalEquation(){
-        //document.querySelector("div.msg").textContent = ''
-        //document.querySelector("p.p_operation_result").textContent = ''
-        //document.querySelector(".p_operation_result").style.display = 'none'
-        //document.querySelector(".result_area_equation").style.display = 'none'
-        let equacao = "C2H6 + O2 = CO2 + H2O"
+        document.querySelector("div.msg").textContent = ''
+        document.querySelector("p.p_operation_result").textContent = ''
+        document.querySelector(".p_operation_result").style.display = 'none'
+        document.querySelector(".result_area_equation").style.display = 'none'
+        let equacao = document.querySelector(".chemistry_equation_input").value.trim()
         console.log(equacao)
         if(equacao.indexOf("=") == -1){
             document.querySelector("div.msg").innerHTML = "<p class = 'alert alert-danger'>É necessário ter um sinal de igual na equação.</p>"
@@ -800,12 +800,11 @@
         console.log(e)
     })
     console.log(balenceded_eq)
-   // document.querySelector(".p_operation_result").innerHTML = `${balenceded_eq}`
-   // document.querySelector(".p_operation_result").style.display = 'block';
-   // document.querySelector(".result_area_equation").style.display = 'block';
+    document.querySelector(".p_operation_result").innerHTML = `${balenceded_eq}`
+    document.querySelector(".p_operation_result").style.display = 'block';
+    document.querySelector(".result_area_equation").style.display = 'block';
     }
     balanceChemicalEquation()
-    
     
     
     
