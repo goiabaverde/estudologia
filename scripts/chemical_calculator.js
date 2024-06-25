@@ -1,4 +1,7 @@
-document.addEventListener("DOMContentLoaded",()=>{
+const { floor } = require("mathjs")
+
+console.log("TESTEE")
+
     class Node{
         constructor(data){
             this.data = data
@@ -266,16 +269,49 @@ document.addEventListener("DOMContentLoaded",()=>{
             }
         
             
-    
+            
         get_the_lowests_integers(){
-            for(var i = 0; i < this.coef.length; i++){
-                if(this.coef[i] % 1 != 0){
-                    const decimal_number = this.coef[i] 
-                    const corrector = 1 / decimal_number
-                    this.coef = this.coef.map((x) => x * corrector)
-                    i = 0
+            const max = Math.max.apply(null, this.coef);
+            console.log(max)
+            function mdc(a,b){
+                if(a < b){
+                    const temp = a
+                    a = b
+                    b = temp
+                }
+                if(a % b == 0){
+                    return b
+                }else{
+                    return mdc(b, a % b)
                 }
             }
+
+
+            function isFloat(n){
+                if(parseInt(n) != parseFloat(n)){
+                    return true
+                }
+                return false
+            }
+
+            function get_corrector(n){
+                let loop = true
+                let counter = 0
+                while(loop){
+                    if(isFloat(n * 10**counter) != true){
+                        loop = false
+                        var temp = n * 10 ** counter
+                        var temp_denominador = 10 ** counter
+                    }else{counter++}
+
+                }
+                const MDC = mdc(temp, temp_denominador)
+                return  temp_denominador/MDC 
+                
+            }
+            const corrector = get_corrector(max)
+            console.log(corrector)
+            this.coef = this.coef.map((x) => x * corrector)
         }
     }
     
@@ -469,13 +505,14 @@ document.addEventListener("DOMContentLoaded",()=>{
     
     var reagente = ""
     var produto = ""
-    
+    console.log("UAI")
     function balanceChemicalEquation(){
-        document.querySelector("div.msg").textContent = ''
-        document.querySelector("p.p_operation_result").textContent = ''
-        document.querySelector(".p_operation_result").style.display = 'none'
-        document.querySelector(".result_area_equation").style.display = 'none'
-        let equacao = document.querySelector("#chemistry_equation_input").value
+        //document.querySelector("div.msg").textContent = ''
+        //document.querySelector("p.p_operation_result").textContent = ''
+        //document.querySelector(".p_operation_result").style.display = 'none'
+        //document.querySelector(".result_area_equation").style.display = 'none'
+        let equacao = "C2H6 + O2 = CO2 + H2O"
+        console.log(equacao)
         if(equacao.indexOf("=") == -1){
             document.querySelector("div.msg").innerHTML = "<p class = 'alert alert-danger'>É necessário ter um sinal de igual na equação.</p>"
             throw new Error("The equation must have a equal sign")
@@ -484,8 +521,8 @@ document.addEventListener("DOMContentLoaded",()=>{
         equacao = equacao.split('=')
         console.log(equacao)
         // check if the equation has all the plus signal necessaries
-            //if(equacao)
         reagente = equacao[0].trim()
+        
         produto = equacao[1].trim()
         console.log(reagente)
         console.log(produto)
@@ -722,15 +759,27 @@ document.addEventListener("DOMContentLoaded",()=>{
         console.log(coeficientes.exibir())
         let equacoes_algebricas = []
     
-    
+        var stop = false
         if(checked == false){coeficientes.change(2, 1)}
         for(var l = 0; l < 2 ; l++){
+            if(stop){break}
             for(var a = 0; a < equacoes.length ; a++){
+                let counter = 0
+                for(var g = 0; g < coeficientes.qtd; g++){
+                    if (parseFloat(coeficientes.coef[g]) == 0){counter += 1}
+                    
+                }
+                console.log(counter)
+                if (counter == 0){ 
+                    stop = true
+                    break
+                }
                 if(coeficientes.resolver_eq(equacoes[a], coeficientes) == true){continue}
             }
         }
-    
+        console.log(coeficientes)
         coeficientes.get_the_lowests_integers()
+        console.log(coeficientes)
         let balenceded_eq = ''
         let index_of_coef = 0
         check_if_is_balenced(equacoes, coeficientes)
@@ -755,13 +804,13 @@ document.addEventListener("DOMContentLoaded",()=>{
         console.log(e)
     })
     console.log(balenceded_eq)
-    document.querySelector(".p_operation_result").innerHTML = `${balenceded_eq}`
-    document.querySelector(".p_operation_result").style.display = 'block';
-    document.querySelector(".result_area_equation").style.display = 'block';
+   // document.querySelector(".p_operation_result").innerHTML = `${balenceded_eq}`
+   // document.querySelector(".p_operation_result").style.display = 'block';
+   // document.querySelector(".result_area_equation").style.display = 'block';
     }
+    balanceChemicalEquation()
     
     
-    document.querySelector("#chemistry_equation_btn").addEventListener("click", balanceChemicalEquation)
+    
+    
         
-})
-
