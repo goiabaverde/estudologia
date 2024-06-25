@@ -1,6 +1,4 @@
-const { floor } = require("mathjs")
 
-console.log("TESTEE")
 
     class Node{
         constructor(data){
