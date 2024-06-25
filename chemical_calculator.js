@@ -170,7 +170,7 @@ console.log("TESTEE")
                     return false
                 }
                 if(eq == undefined){
-                    //document.querySelector("div.msg").innerHTML = "<p class = 'alert alert-danger'>Há algum erro na equação química, verifique e tente novamente.</p>"
+                    document.querySelector("div.msg").innerHTML = "<p class = 'alert alert-danger'>Há algum erro na equação química, verifique e tente novamente.</p>"
                     throw new Error("There is something wrong with the equation, please check")
                 }
                 eq = eq.trim()
@@ -511,7 +511,7 @@ console.log("TESTEE")
         document.querySelector("p.p_operation_result").textContent = ''
         document.querySelector(".p_operation_result").style.display = 'none'
         document.querySelector(".result_area_equation").style.display = 'none'
-        let equacao = "C2H6 + O2 = CO2 + H2O"
+        document.querySelector(".chemistry_equation_input").value.trim()
         console.log(equacao)
         if(equacao.indexOf("=") == -1){
             document.querySelector("div.msg").innerHTML = "<p class = 'alert alert-danger'>É necessário ter um sinal de igual na equação.</p>"
@@ -810,3 +810,6 @@ console.log("TESTEE")
     }
     balanceChemicalEquation()
     
+    
+    
+        
