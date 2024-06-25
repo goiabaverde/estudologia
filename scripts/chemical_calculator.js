@@ -503,10 +503,15 @@
     var produto = ""
     console.log("UAI")
     function balanceChemicalEquation(){
-        document.querySelector("div.msg").innerText = ''
-        document.querySelector("p.p_operation_result").innerText = ''
+        // This function will balance the chemical equation
+        
+        // Clean the results from a possible past use
+        if ( document.querySelector("div.msg").textContent != '' ){document.querySelector("div.msg").innerText = ''}
+        if ( document.querySelector("p.p_operation_result").textContent != '' ){document.querySelector("p.p_operation_result").innerText = ''}
         document.querySelector(".p_operation_result").style.display = 'none'
         document.querySelector(".result_area_equation").style.display = 'none'
+
+        // Get the equation that will be balanced
         let equacao = document.querySelector(".chemistry_equation_input").value.trim()
         console.log(equacao)
         if(equacao.indexOf("=") == -1){
