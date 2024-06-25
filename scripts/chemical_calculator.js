@@ -268,8 +268,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
             
             
         get_the_lowests_integers(){
-            const max = Math.max.apply(null, this.coef);
-            console.log(max)
             function mdc(a,b){
                 if(a < b){
                     const temp = a
@@ -284,29 +282,42 @@ document.addEventListener("DOMContentLoaded", ()=>{
             }
 
 
-        function isFloat(n){
-            if(parseInt(n) != parseFloat(n)){
-                return true
+            function isFloat(n){
+                if(parseInt(n) != parseFloat(n)){
+                    return true
+                }
+                return false
             }
-            return false
-        }
 
-        function get_corrector(n){
-            let loop = true
-            let counter = 0
-            while(loop){
-                if(isFloat(n * 10**counter) != true){
-                    loop = false
-                    var temp = n * 10 ** counter
-                    var temp_denominador = 10 ** counter
-                }else{counter++}
+            function get_corrector(n){
+                let loop = true
+                let counter = 0
+                while(loop){
+                    if(isFloat(n * 10**counter) != true){
+                        loop = false
+                        var temp = n * 10 ** counter
+                        var temp_denominador = 10 ** counter
+                    }else{counter++}
+                }
+                const MDC = mdc(temp, temp_denominador)
+                return  temp_denominador/MDC 
             }
-            const MDC = mdc(temp, temp_denominador)
-            return  temp_denominador/MDC 
-        }
-        const corrector = get_corrector(max)
-        console.log(corrector)
-        this.coef = this.coef.map((x) => x * corrector)
+            
+            let floats_numbers = []
+            for(var c = 0; c < this.coef.length; c++){
+                if( isFloat(this.coef[c]) ){
+                    floats_numbers.includes(this.coef[c])
+                }
+            }
+            if (floats_numbers.length != 0){
+                var max = Math.max(...floats_numbers);
+            }else{return 1}
+
+            
+            
+            const corrector = get_corrector(max)
+            console.log(corrector)
+            this.coef = this.coef.map((x) => x * corrector)
         }
     }
     
