@@ -306,7 +306,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             let floats_numbers = []
             for(var c = 0; c < this.coef.length; c++){
                 if( isFloat(this.coef[c]) ){
-                    floats_numbers.includes(this.coef[c])
+                    floats_numbers.push(this.coef[c])
                 }
             }
             if (floats_numbers.length != 0){
