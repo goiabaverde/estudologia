@@ -284,31 +284,29 @@ document.addEventListener("DOMContentLoaded", ()=>{
             }
 
 
-            function isFloat(n){
-                if(parseInt(n) != parseFloat(n)){
-                    return true
-                }
-                return false
+        function isFloat(n){
+            if(parseInt(n) != parseFloat(n)){
+                return true
             }
+            return false
+        }
 
-            function get_corrector(n){
-                let loop = true
-                let counter = 0
-                while(loop){
-                    if(isFloat(n * 10**counter) != true){
-                        loop = false
-                        var temp = n * 10 ** counter
-                        var temp_denominador = 10 ** counter
-                    }else{counter++}
-
-                }
-                const MDC = mdc(temp, temp_denominador)
-                return  temp_denominador/MDC 
-                
+        function get_corrector(n){
+            let loop = true
+            let counter = 0
+            while(loop){
+                if(isFloat(n * 10**counter) != true){
+                    loop = false
+                    var temp = n * 10 ** counter
+                    var temp_denominador = 10 ** counter
+                }else{counter++}
             }
-            const corrector = get_corrector(max)
-            console.log(corrector)
-            this.coef = this.coef.map((x) => x * corrector)
+            const MDC = mdc(temp, temp_denominador)
+            return  temp_denominador/MDC 
+        }
+        const corrector = get_corrector(max)
+        console.log(corrector)
+        this.coef = this.coef.map((x) => x * corrector)
         }
     }
     
@@ -759,7 +757,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
         })
         console.log("DEPOITS")
         console.log(coeficientes.exibir())
-        let equacoes_algebricas = []
     
         var stop = false
         if(checked == false){coeficientes.change(2, 1)}
@@ -810,6 +807,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
     document.querySelector(".p_operation_result").style.display = 'block';
     document.querySelector(".result_area_equation").style.display = 'block';
     }
-    balanceChemicalEquation()
+
+    document.querySelector("button#chemistry_equation_btn").addEventListener("click", ()=>{balanceChemicalEquation()})
 })   
-        
