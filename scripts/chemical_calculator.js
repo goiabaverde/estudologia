@@ -311,6 +311,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             }
             if (floats_numbers.length != 0){
                 var max = Math.max(...floats_numbers);
+                console.log(`MAXIMO ${max}`)
             }else{return 1}
 
             
