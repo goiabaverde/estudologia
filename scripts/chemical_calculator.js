@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded")(()=>{
+document.addEventListener("DOMContentLoaded", ()=>{
     class Node{
         constructor(data){
             this.data = data
