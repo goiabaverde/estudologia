@@ -504,7 +504,7 @@
     console.log("UAI")
     function balanceChemicalEquation(){
         document.querySelector("div.msg").innerText = ''
-        document.querySelector("p.p_operation_result").textContent = ''
+        document.querySelector("p.p_operation_result").innerText = ''
         document.querySelector(".p_operation_result").style.display = 'none'
         document.querySelector(".result_area_equation").style.display = 'none'
         let equacao = document.querySelector(".chemistry_equation_input").value.trim()
