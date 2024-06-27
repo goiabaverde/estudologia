@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="scripts/basic.js"></script>
+  <script src="scripts/basic02.js"></script>  
+  <script src="scripts/calc_est.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="estilos/style.css">
+  <link rel="shortcut icon" href="imagens/brain_882998.png" type="image/x-icon">
+  <title>Estatística</title>
+</head>
+<body>
+  <header>
+    <nav id="nav">
+        <a class="logo" href="home.html">Estudologia</a>
+        <div class="mobile_menu">
+            <div class="nav_btn">  
+                <i onclick='showMenu()' class="fa-solid fa-bars"></i>
+            </div>        
+        </div>
+        <ul class="nav_list">
+            <input type="checkbox" name="checkbox" class="checkbox" id="chk" onchange="change_theme(document.body.className)">
+            <label class="theme_label" for="chk">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun"></i>
+                <div class="ball"></div>
+            </label>
+            <li class="nav_link"><a href="pomodoro.html">Pomodoro</a></li>
+            <li class="nav_link"><a href="courses.html">Cursos</a></li>
+            <li class="nav_link"><a href="hub.html">Apps</a></li>
+            <li class="nav_link"><a href="about_me.html">Sobre Mim</a></li>
+        </ul>     
+    </nav>
+</header>
+<main>
+   
+        <div class="calculator">
+            <h1>Estatística</h1>
+                <div class="centralized">
+                    <div class="theory_content">
+                        <p>Estatística é um campo da matemática que atua na análise de dados, possibilitando gerar novas conclussões perante uma amostra de informações.</p>
+                        <p>Para que um espaço amostral seja processado, são utilizados parâmetros estatísticos para tal ação, tais como : média, mediana, moda, variância e desvio padrão.</p>
+                        <p>Esses parâmetros se dividem em dois grupos, medidias de tendência central que são valores que apontam para o centro de um espaço amostra, sendo a média, mediana e moda conceitos que se enquadram nesse grupo e as medidas de disperssão que são grandezas que representam o quão disperso está aquele espaço amostral, o que possibilita um refino maior dos dados.</p>
+                        <ul>
+                            <li class="li-est">Média: <strong>∑ xi / n</strong>, onde n é o número de elementos do espaço amostral a ser contabilizado.</li>
+                          
+                            <li class="li-est">Mediana: é o valor do central do espaço amostral ordenado de forma crescente, se a quantidade de elementos for par a mediana sera a média do termo central com o seu sucessor.</li>
+                       
+                            <li class="li-est">Moda: É o item que mais aparece nos dados a serem analizados, se não houver um elemento que aparece com mais frequência, então nessa amostra não há uma moda.</li>
+                      
+                            <li class="li-est">Variância: ∑ (xi – Média) 2 / (n – 1).</li>
+                            
+                            <li class="li-est">Desvio padrão: √(variância)</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="content">
+                    <form onsubmit="return false">
+                        <input type="text" name="var1" class="est_input" id="est_input" min="0" required  placeholder="1,2,3,4">
+                        <button id="est_btn" class="btn btn-primary">Calcular</button>
+                        <div></div>
+                    </form>
+                </div>
+            
+                <div class="centralized">
+                    <div class="msg"></div>
+                    <div class="resu">
+                        <table id="est_table">
+                            <tr>
+                                <td>Média</td>
+                                <td id="average"></td>
+                            </tr>
+                            <tr>
+                                <td>Mediana</td>
+                                <td id="median"></td>
+                            </tr>
+                            <tr>
+                                <td>Moda</td>
+                                <td id="mode"></td>
+                            </tr>
+                            <tr>
+                                <td>Variância</td>
+                                <td id="variance"></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>Desvio padrão</td>
+                                <td id="standart_des"></td>
+                            </tr>      
+                        </table>
+                    </div>
+                </div>
+                </div>
+        </div>
+        
+</main>
+</body>
+</html>

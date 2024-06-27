@@ -201,7 +201,7 @@ svg.bi.bi-list{
     ;
 }
 
-#chemistry_equation_input{
+#chemistry_equation_input, #est_input{
     width: 42vw;
     text-align: left;
     padding: 5px 10px;
@@ -250,7 +250,7 @@ svg.bi.bi-list{
         display: flex;
     }
 
-    #chemistry_equation_input{
+    #chemistry_equation_input, #est_input{
         width: 50vw ;
     }
 
@@ -265,7 +265,7 @@ svg.bi.bi-list{
         overflow-x: auto;
     }
 
-    #chemistry_equation_input{
+    #chemistry_equation_input, #est_input{
         width: 300px;
     }
 }
@@ -714,7 +714,7 @@ table tbody, table thead {
 }
 
 @media(min-width: 1200px){
-    #chemistry_equation_input{
+    #chemistry_equation_input, #est_input{
         width: 503px;
     }
 }
@@ -735,3 +735,14 @@ table tbody, table thead {
     
 }
 
+#est_table{
+    display: none;
+}
+
+.li-est{
+    margin: 5px 0;
+}
+
+.theory_content{
+    padding:  0 30px;
+}
