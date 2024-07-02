@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 let item = sum - ave < 0? sum - ave : -1*(sum - ave)
                 sum += item
             })
-            return sum / numbers.length
+            return formatResult(sum / numbers.length)
         }
 
         function variance(numbers){
