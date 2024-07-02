@@ -122,6 +122,16 @@ document.addEventListener("DOMContentLoaded", ()=>{
             return formatResult(sum / numbers.length)
         }
 
+        function median_dev(numbers){
+            const ave = average(numbers)
+            let sum = 0
+            numbers.forEach(num=>{
+                let item = sum - ave < 0? sum - ave : -1*(sum - ave)
+                sum += item
+            })
+            return sum / numbers.length
+        }
+
         function variance(numbers){
             const ave = average(numbers)
             let sum = 0
@@ -174,9 +184,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
         document.querySelector("#average").textContent = `${average(numbers)}`
         document.querySelector("#median").textContent = `${median(numbers)}`
         document.querySelector("#mode").textContent = `${Mode(numbers)}`
+        document.querySelector("#median_dev").textContent = `${median_dev(numbers)}`
         document.querySelector("#variance").textContent = `${variance(numbers)}`
         document.querySelector("#standart_des").textContent = `${standart_dev(numbers)}`
-        //return [average(numbers), variance(numbers), standart_dev(numbers), Mode(numbers), median(numbers)]
     }
 
     
