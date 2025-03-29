@@ -126,8 +126,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
             const ave = average(numbers)
             let sum = 0
             numbers.forEach(num=>{
-                let item = sum - ave < 0? -1*(sum - ave) : sum - ave
-                sum += item
+                let dif = num - ave
+                sum += dif >= 0? dif : -dif
             })
             return formatResult(sum / numbers.length)
         }
