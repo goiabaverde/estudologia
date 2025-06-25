@@ -201,7 +201,7 @@ svg.bi.bi-list{
     ;
 }
 
-#chemistry_equation_input, #est_input{
+#chemistry_equation_input, co_equation_input,#est_input{
     width: 42vw;
     text-align: left;
     padding: 5px 10px;
