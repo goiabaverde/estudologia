@@ -254,13 +254,13 @@ svg.bi.bi-list{
         width: 50vw ;
     }
 
-    #result_area_equation{
+    #result_area_equation, #result_rotation_origin{
         width: 410px;
         overflow-x: auto;
         
     }
 
-    .p_operation_result{
+    .p_operation_result, .co_p_operation_result, .p_result_clasification{
         white-space: nowrap;
         overflow-x: auto;
     }
@@ -517,7 +517,7 @@ td{
     overflow-x: auto;
 }
 
-.result_area_equation{
+.result_area_equation, #result_rotation_origin{
     display: none;
     align-items: center;
     background-color: wheat;
@@ -553,7 +553,7 @@ div.operation_input{
     margin: 10px 0px;
 }
 
-.p_operation_result{
+.p_operation_result, .p_result_clasification, .p_result_clasification{
     display: none;
     color: black;
     margin: 0;
@@ -561,6 +561,20 @@ div.operation_input{
     border-radius: 10px;
     padding: 10px;
     background-color: wheat;
+}
+
+.co_p_operation_result{
+    display: none;
+    color: black;
+    margin: 0;
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: wheat;
+}
+
+.co_p_operation_result.dark{
+    color: black;
 }
 
 .sum_input label{
@@ -600,7 +614,7 @@ table tbody, table thead {
     margin: 10px;
 }
 
-.p_operation_result.dark{
+.p_operation_result.dark ,.p_operation_result.dark , .p_result_clasification.dark{
     color: black;
 }
 
