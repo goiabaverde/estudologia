@@ -38,7 +38,7 @@ function classificar_conica(){   // Recebe valores A,B,C,D,E,F
     E = interpretarExpressao(document.getElementById('input5').value);
     F = interpretarExpressao(document.getElementById('input6').value);
 
-    // Encontrando o det da matriz da cônica
+    // Encontrando o det da matriz da cônica 
     console.log(A,B,C,D,E,F)
 
     matrix_co = [[A,B/2,D/2],[B/2,C,E/2],[D/2,E/2,F]]
@@ -157,16 +157,16 @@ function classificar_conica(){   // Recebe valores A,B,C,D,E,F
                 // Equação linear: Dx + Ey + F = 0 → uma reta
                 if (d != 0 || e != 0){
                     classificacao  = "Uma reta";
-                }else{ classificacao  = "Conjunto vazio (sem solução real)"
+                }else{ classificacao  = "Conjunto vazio"
                 
                 }
-            }if (A !== 0) {
+            }if (a !== 0) {
             // Completa o quadrado em x: A(x + D/(2A))² + Cy² + Ey + (F - D²/(4A)) = 0
             var novoF = f - (d ** 2) / (4 * a);
            
-            if (C === 0) {
+            if (c === 0) {
                 // Equação: A(x + D/(2A))² + Ey + novoF = 0
-                if (E !== 0) {
+                if (e !== 0) {
                     // Pode ser escrita como y = k(x) → uma reta
                     classificacao  = "Uma reta";
                 } else {
